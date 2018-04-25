@@ -11,4 +11,5 @@
                (:file "globals")
                (:file "util")
                (:file "cl-scryfall")
+               (:file "cards")
                ))
