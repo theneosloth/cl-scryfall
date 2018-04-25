@@ -26,3 +26,19 @@
       (t (getf json :|data|))
       ;; TODO: More cards handling
       ((getf json :|has_more|) nil))))
+
+
+(defun card-to-markdown (card)
+  "Converts a card plist into a pretty markdown representation"
+  (destructuring-bind
+        (&key |name| |mana_cost| |type_line| |oracle_text| |flavor_text| |power| |toughness| &allow-other-keys)
+      card
+
+    ;; TODO: Move the conditionals into the format string
+    (format nil "**~A** ~A~&~A ~A~& ~A~&*~A*~&~&"
+            |name|
+            |mana_cost|
+            |type_line|
+            (if |power| (format nil "~A/~A" |power| |toughness|) "test")
+            (or |oracle_text| "")
+            (or |flavor_text| ""))))
