@@ -20,7 +20,6 @@
             (,tempargs ,args)
             (url (build-url :path ,temppath :args ,tempargs))
             (json (load-url-as-json url)))
-       (format t "~a" url)
        (cond
          ((equalp (getf json :|object|) "error") (warn 'scryfall-response-error
                                                        :status (getf json :|status|)
