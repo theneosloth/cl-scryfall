@@ -3,4 +3,12 @@
 (defpackage #:cl-scryfall
   (:use #:cl #:asdf)
   (:export
-   #:cards-search))
+   #:cards-cards
+   #:cards-search
+   #:cards-named-exact
+   #:cards-named-fuzzy
+   #:cards-autocomplet
+   #:cards-random
+   #:cards-multiverse
+   #:cards-mtgo
+   #:cards-code-number))
