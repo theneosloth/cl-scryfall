@@ -18,7 +18,7 @@
         (&key |name| |mana_cost| |type_line| |oracle_text| |flavor_text| |power| |toughness| &allow-other-keys)
       card
     ;; TODO: Move the conditionals into the format string
-    (format nil "**~A** ~A~&~A ~A~& ~A~&*~A*~&~&"
+    (format nil "**~A** ~A~&~A~A~&~A~&*~A*~&~&"
             |name|
             |mana_cost|
             |type_line|
