@@ -29,15 +29,15 @@
                       :reader response-warnings
                       :documentation "If your input also generated non-failure warnings, they will be provided as human-readable strings in this array.")))
 
-(defmacro with-api-call (path args &rest body)
+(defmacro with-api-call (path &optional params &rest body)
   "Load a json from a url built by BUILD-PATH, then execute body with local variables for the URL and loaded JSON.
    Signals a warning if the call returns an error."
-  (let ((tempargs (gensym))
+  (let ((tempparams (gensym))
         (temppath (gensym)))
     `(let* ((,temppath ,path)
-            (,tempargs ,args)
-            (url (build-url :path ,temppath :args ,tempargs))
-            (json (load-url-as-json url)))
+            (,tempparams ,params)
+            (url (build-url :path ,temppath))
+            (json (load-url-as-json url :params ,tempparams)))
        (cond
          ((equalp (getf json :|object|) "error") (warn 'scryfall-response-error
                                                        :status (getf json :|status|)
