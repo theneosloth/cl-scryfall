@@ -2,9 +2,9 @@
 
 (in-package #:cl-scryfall)
 
-(defun build-url (&key path)
+(defun build-url (path)
   "Adds path to the base url."
-  (format nil "~a~a" *scryfall* path))
+  (format nil "~a~a" +scryfall+ path))
 
 (defun epairlis (keys data)
   "Returns a drakma compatible alist based on given keys and data"
@@ -20,7 +20,7 @@
   "Load a given url into a plist"
   (jonathan:parse
    (flexi-streams:octets-to-string
-    (drakma:http-request url :method :get :user-agent *user-agent* :parameters params) :external-format :utf-8)))
+    (drakma:http-request url :method :get :user-agent +user-agent+ :parameters params) :external-format :utf-8)))
 
 (defun card-to-markdown (card)
   "Converts a card plist into a pretty markdown representation"
