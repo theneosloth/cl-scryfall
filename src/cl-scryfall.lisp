@@ -39,10 +39,10 @@
             (url (build-url ,temppath))
             (json (load-url-as-json url :params ,tempparams)))
        (cond
-        ((equalp (getf json :|object|) "error") (warn 'scryfall-response-error
-                                                      :status (getf json :|status|)
-                                                      :code (getf json :|code|)
-                                                      :details (getf json :|details|)
-                                                      :type (getf json :|type|)
-                                                      :warnings (getf json :|warnings|)))
-        (,@body)))))
+         ((equalp (getf json :object) "error") (warn 'scryfall-response-error
+                                                     :status (getf json :|status|)
+                                                     :code (getf json :|code|)
+                                                     :details (getf json :|details|)
+                                                     :type (getf json :|type|)
+                                                     :warnings (getf json :|warnings|)))
+         (,@body)))))
