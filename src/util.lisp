@@ -22,13 +22,20 @@
     (drakma:http-request url :method :get :user-agent +user-agent+ :parameters params) :external-format :utf-8) :as type :keyword-normalizer #'string-upcase :normalize-all t))
 
 (defun mapcard (func list &optional (continue t))
+<<<<<<< HEAD
   "Apply FUNC to all the elements of a scryfall LIST. If CONTINUE is set, call the function again on the next page of scryfall results"
+=======
+  "Apply FUNC to all the elements of LIST. If CONTINUE is set, call the function again on the next page of scryfall results"
+>>>>>>> 03492e19f0df074e06c575fed3ec9003fc5fe475
   (if (and (getf list :has-more) continue)
       (append
        (mapcard func (load-url-as-json (getf list :next-page)))
        (mapcar func (getf list :data)))
       (mapcar func (getf list :data))))
+<<<<<<< HEAD
 
 (defun make-objects (constructor)
   #'(lambda (list)
       (mapcard (make-object #'constructor) list)))
+=======
+>>>>>>> 03492e19f0df074e06c575fed3ec9003fc5fe475

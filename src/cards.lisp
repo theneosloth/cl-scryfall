@@ -4,7 +4,15 @@
 
 ;; Utilty functions
 
+<<<<<<< HEAD
 (defvar create-cards (make-objects #'make-card))
+=======
+(defun create-card (list)
+  (apply #'make-card list))
+
+(defun create-cards (list)
+  (mapcard #'create-card list))
+>>>>>>> 03492e19f0df074e06c575fed3ec9003fc5fe475
 
 ;; API Calls
 (defun cards-cards (page)
