@@ -1,2 +1,108 @@
 * cl-scryfall
-This is a work in progress api wrapper for scryfall.com.
+This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented
+
+** Example
+#+BEGIN_SRC lisp
+(ql:quickload :cl-scryfall)
+(cl-scryfall:cards-random)
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+#S(CARD
+   :ARENA_ID NIL
+   :ID "67d3d039-248a-4eb8-be5c-12959b458fea"
+   :LANG "en"
+   :MTGO_ID NIL
+   :MTGO_FOIL_ID NIL
+   :MULTIVERSE_IDS NIL
+   :OBJECT "card"
+   :ORACLE_ID "340aaeb6-cd18-4908-9729-8c53ab02c6f8"
+   :PRINTS_SEARCH_URI "https://api.scryfall.com/cards/search?order=set&q=%21%E2%80%9CKnight%E2%80%9D&unique=prints"
+   :RULINGS_URI "https://api.scryfall.com/cards/trtr/2/rulings"
+   :SCRYFALL_URI "https://scryfall.com/card/trtr/2/knight?utm_source=api"
+   :URI "https://api.scryfall.com/cards/trtr/2"
+   :ALL_PARTS NIL
+   :CARD_FACES NIL
+   :CMC 0.0
+   :COLORS ("W")
+   :COLOR_IDENTITY ("W")
+   :EDHREC_RANK NIL
+   :FOIL NIL
+   :HAND_MODIFIER NIL
+   :LAYOUT "token"
+   :LEGALITIES (:BRAWL "not_legal" :DUEL "not_legal" :|1V1| "not_legal"
+                :COMMANDER "not_legal" :PENNY "not_legal" :VINTAGE "not_legal"
+                :PAUPER "not_legal" :LEGACY "not_legal" :MODERN "not_legal"
+                :FRONTIER "not_legal" :FUTURE "not_legal" :STANDARD
+                "not_legal")
+   :LIFE_MODIFIER NIL
+   :LOYALTY NIL
+   :MANA_COST ""
+   :NAME "Knight"
+   :NONFOIL T
+   :ORACLE_TEXT "Vigilance"
+   :OVERSIZED NIL
+   :POWER "2"
+   :RESERVED NIL
+   :TOUGHNESS "2"
+   :TYPE_LINE "Token Creature — Knight"
+   :ARTIST "Matt Stewart"
+   :BORDER_COLOR "black"
+   :COLLECTOR_NUMBER "2"
+   :COLORSHIFTED NIL
+   :DIGITAL NIL
+   :EUR NIL
+   :FLAVOR_TEXT NIL
+   :FRAME "2003"
+   :FULL_ART NIL
+   :FUTURESHIFTED NIL
+   :HIGHRES_IMAGE T
+   :ILLUSTRATION_ID "ae4800d6-1be9-4a71-9745-cbbfaa0ec8fe"
+   :IMAGE_URIS (:BORDER_CROP
+                "https://img.scryfall.com/cards/border_crop/en/trtr/2.jpg?1517813031"
+                :ART_CROP
+                "https://img.scryfall.com/cards/art_crop/en/trtr/2.jpg?1517813031"
+                :PNG
+                "https://img.scryfall.com/cards/png/en/trtr/2.png?1517813031"
+                :LARGE
+                "https://img.scryfall.com/cards/large/en/trtr/2.jpg?1517813031"
+                :NORMAL
+                "https://img.scryfall.com/cards/normal/en/trtr/2.jpg?1517813031"
+                :SMALL
+                "https://img.scryfall.com/cards/small/en/trtr/2.jpg?1517813031")
+   :PRINTED_NAME NIL
+   :PRINTED_TYPE_LINE NIL
+   :PRINTED_TEXT NIL
+   :PURCHASE_URIS (:COOLSTUFFINC
+                   "https://www.coolstuffinc.com/main_search.php?pa=searchOnName&page=1&q=Knight&resultsPerPage=50&utm_source=scryfall"
+                   :MTGO_TRADERS
+                   "http://www.mtgotraders.com/store/search.php?q=Knight&referral=scryfall"
+                   :CARD_KINGDOM
+                   "https://www.cardkingdom.com/catalog/search?filter%5Bname%5D=Knight&partner=scryfall&utm_campaign=affiliate&utm_medium=scryfall&utm_source=scryfall"
+                   :CARDHOARDER
+                   "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Knight&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+                   :MAGICCARDMARKET
+                   "https://www.cardmarket.com/Magic?mainPage=showSearchResult&referrer=scryfall&searchFor=Knight"
+                   :TCGPLAYER "https://scryfall.com/s/tcgplayer/78478" :EBAY
+                   "http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5337966903&icep_catId=19107&icep_ff3=10&icep_sortBy=12&icep_uq=Knight&icep_vectorid=229466&ipn=psmain&kw=lg&kwid=902099&mtid=824&pub=5575230669&toolid=10001"
+                   :AMAZON
+                   "https://www.amazon.com/gp/search?ie=UTF8&index=toys-and-games&keywords=Knight&tag=scryfall-20")
+   :RARITY "common"
+   :RELATED_URIS (:MTGTOP8
+                  "http://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Knight"
+                  :EDHREC "http://edhrec.com/route/?cc=Knight" :TCGPLAYER_DECKS
+                  "http://decks.tcgplayer.com/magic/deck/search?contains=Knight&page=1&partner=Scryfall")
+   :REPRINT T
+   :SCRYFALL_SET_URI "https://scryfall.com/sets/trtr?utm_source=api"
+   :SET "trtr"
+   :SET_NAME "Return to Ravnica Tokens"
+   :SET_SEARCH_URI "https://api.scryfall.com/cards/search?order=set&q=e%3Atrtr&unique=prints"
+   :SET_URI "https://api.scryfall.com/sets/trtr"
+   :STORY_SPOTLIGHT_NUMBER NIL
+   :STORY_SPOTLIGHT_URI NIL
+   :TIMESHIFTED NIL
+   :TIX NIL
+   :USD "0.10"
+   :WATERMARK NIL)
+#+end_example

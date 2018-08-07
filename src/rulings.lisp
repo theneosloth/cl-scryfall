@@ -6,12 +6,7 @@
   (published_at nil :type string)
   (comment nil :type string))
 
-;; TODO: Combine this with the similar functions for the cards
-(defun create-ruling (list)
-  (apply #'make-ruling list))
-
-(defun create-rulings (list)
-  (mapcard #'create-ruling list))
+(defvar create-rulings (make-objects #'make-ruling))
 
 (defun rulings-multiverse (multiverseid)
   "Returns a List of rulings for a card with the given Multiverse ID. If the card has multiple multiverse IDs, this method can find either of them."

@@ -1,11 +1,6 @@
 (in-package :cl-scryfall)
 
-(defun create-set (list)
-  (apply #'make-mtg-set list))
-
-(defun create-sets (list)
-  (mapcard #'create-set list))
-
+(defvar create-sets (make-objects #'make-mtg-set))
 
 (defstruct mtg-set
   (object "set" :type string)
