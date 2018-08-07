@@ -40,17 +40,9 @@
             (json (load-url-as-json url :params ,tempparams)))
        (cond
          ((equalp (getf json :object) "error") (warn 'scryfall-response-error
-<<<<<<< HEAD
                                                      :status (getf json :status)
                                                      :code (getf json :code)
                                                      :details (getf json :details)
                                                      :type (getf json :type)
                                                      :warnings (getf json :warnings)))
-=======
-                                                     :status (getf json :|status|)
-                                                     :code (getf json :|code|)
-                                                     :details (getf json :|details|)
-                                                     :type (getf json :|type|)
-                                                     :warnings (getf json :|warnings|)))
->>>>>>> 03492e19f0df074e06c575fed3ec9003fc5fe475
          (,@body)))))

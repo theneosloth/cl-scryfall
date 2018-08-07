@@ -1,15 +1,5 @@
 (in-package :cl-scryfall)
 
-<<<<<<< HEAD
-(defvar create-sets (make-objects #'make-mtg-set))
-=======
-(defun create-set (list)
-  (apply #'make-mtg-set list))
-
-(defun create-sets (list)
-  (mapcard #'create-set list))
-
->>>>>>> 03492e19f0df074e06c575fed3ec9003fc5fe475
 
 (defstruct mtg-set
   (object "set" :type string)
@@ -28,6 +18,8 @@
   (scryfall_uri nil :type string)
   (search_uri nil :type string)
   (uri nil :type string))
+
+(defvar create-sets (make-objects #'make-mtg-set))
 
 (defun sets-sets ()
   "Returns all sets"
