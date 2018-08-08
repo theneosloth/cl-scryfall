@@ -1,5 +1,7 @@
 * cl-scryfall
 [[Documentation][https://neosloth.gitlab.io/cl-scryfall]]
+
+
 This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented
 
 ** Example
@@ -8,8 +10,7 @@ This is a work in progress api wrapper for scryfall.com. Every API method for ca
 (cl-scryfall:cards-random)
 #+END_SRC
 
-#+RESULTS:
-#+begin_src lisp
+#+BEGIN_SRC lisp
 #S(CARD
    :ARENA_ID NIL
    :ID "67d3d039-248a-4eb8-be5c-12959b458fea"
@@ -106,4 +107,4 @@ This is a work in progress api wrapper for scryfall.com. Every API method for ca
    :TIX NIL
    :USD "0.10"
    :WATERMARK NIL)
-#+end_src
+#+END_SRC
