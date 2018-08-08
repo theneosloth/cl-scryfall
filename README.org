@@ -1,5 +1,5 @@
 * cl-scryfall
-[[Documentation][https://neosloth.gitlab.io/cl-scryfall]]
+[[Documentation][https://neosloth.gitlab.io/cl-scryfall/]]
 
 
 This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented
