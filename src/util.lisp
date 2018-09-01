@@ -3,7 +3,7 @@
 (in-package #:cl-scryfall)
 
 (defun build-url (path)
-  "Adds path to the base url."
+  "Adds path to the base url. TODO: Argument support"
   (format nil "~a~a" +scryfall+ path))
 
 (defun epairlis (keys data)

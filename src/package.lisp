@@ -3,6 +3,70 @@
 (defpackage #:cl-scryfall
   (:use #:cl #:asdf)
   (:export
+   #:card-arena-id
+   #:card-id
+   #:card-lang
+   #:card-mtgo-id
+   #:card-mtgo-foil-id
+   #:card-multiverse-ids
+   #:card-object
+   #:card-oracle-idnil
+   #:card-prints-search-uri
+   #:card-rulings-uri
+   #:card-scryfall-uri
+   #:card-uri
+   #:card-all-parts
+   #:card-card-faces
+   #:card-cmc
+   #:card-colors
+   #:card-color-identity
+   #:card-edhrec-rank
+   #:card-foil
+   #:card-hand-modifier
+   #:card-layout
+   #:card-legalities
+   #:card-life-modifier
+   #:card-loyalty
+   #:card-mana-cost
+   #:card-name
+   #:card-nonfoil
+   #:card-oracle-tey
+   #:card-oversized
+   #:card-power
+   #:card-reserved
+   #:card-toughness
+   #:card-type-line
+   #:card-artist
+   #:card-border-color n
+   #:card-collector-number
+   #:card-colorshifted
+   #:card-digital
+   #:card-eur
+   #:card-flavor-text
+   #:card-frame
+   #:card-full-art
+   #:card-futureshifted
+   #:card-highres-image
+   #:card-illustration-id
+   #:card-image-urisnil
+   #:card-printed-name
+   #:card-printed-type-line
+   #:card-printed-text
+   #:card-purchase-uris
+   #:card-rarity
+   #:card-related-uris
+   #:card-reprint nil
+   #:card-scryfall-set-uri
+   #:card-set
+   #:card-set-name
+   #:card-set-search-uri
+   #:card-set-uri
+   #:card-story-spotlight-number
+   #:card-story-spotlight-uri
+   #:card-timeshifted
+   #:card-tix
+   #:card-usd
+   #:card-watermark
    #:cards-cards
    #:cards-search
    #:cards-named-exact
@@ -14,8 +78,28 @@
    #:cards-arena
    #:cards-code-number
    #:cards-id
+   #:mtg-set-object
+   #:mtg-set-code
+   #:mtg-set-mtgo_code
+   #:mtg-set-name
+   #:mtg-set-set_type
+   #:mtg-set-released_at
+   #:mtg-set-block_code
+   #:mtg-set-block
+   #:mtg-set-parent_set_code
+   #:mtg-set-card_count
+   #:mtg-set-digital
+   #:mtg-set-foil-only
+   #:mtg-set-icon_svg_uri
+   #:mtg-set-scryfall_uri
+   #:mtg-set-search_uri
+   #:mtg-set-uri
    #:sets-sets
    #:sets-set
+   #:ruling-object
+   #:ruling-source
+   #:ruling-published_at
+   #:ruling-comment
    #:rulings-multiverse
    #:rulings-mtgo
    #:rulings-number
