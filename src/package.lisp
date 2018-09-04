@@ -3,97 +3,97 @@
 (defpackage #:cl-scryfall
   (:use #:cl #:asdf)
   (:export
-   #:card-arena-id
+   #:card-arena_id
    #:card-id
    #:card-lang
-   #:card-mtgo-id
-   #:card-mtgo-foil-id
-   #:card-multiverse-ids
+   #:card-mtgo_id
+   #:card-mtgo_foil_id
+   #:card-multiverse_ids
    #:card-object
-   #:card-oracle-idnil
-   #:card-prints-search-uri
-   #:card-rulings-uri
-   #:card-scryfall-uri
+   #:card-oracle_id
+   #:card-prints_search_uri
+   #:card-rulings_uri
+   #:card-scryfall_uri
    #:card-uri
-   #:card-all-parts
-   #:card-card-faces
+   #:card-all_parts
+   #:card-card_faces
    #:card-cmc
    #:card-colors
-   #:card-color-identity
-   #:card-edhrec-rank
+   #:card-color_identity
+   #:card-edhrec_rank
    #:card-foil
-   #:card-hand-modifier
+   #:card-hand_modifier
    #:card-layout
    #:card-legalities
-   #:card-life-modifier
+   #:card-life_modifier
    #:card-loyalty
-   #:card-mana-cost
+   #:card-mana_cost
    #:card-name
    #:card-nonfoil
-   #:card-oracle-tey
+   #:card-oracle_text
    #:card-oversized
    #:card-power
    #:card-reserved
    #:card-toughness
-   #:card-type-line
+   #:card-type_line
    #:card-artist
-   #:card-border-color n
-   #:card-collector-number
+   #:card-border_color
+   #:card-collector_number
    #:card-colorshifted
    #:card-digital
    #:card-eur
-   #:card-flavor-text
+   #:card-flavor_text
    #:card-frame
-   #:card-full-art
+   #:card-full_art
    #:card-futureshifted
-   #:card-highres-image
-   #:card-illustration-id
-   #:card-image-urisnil
-   #:card-printed-name
-   #:card-printed-type-line
-   #:card-printed-text
-   #:card-purchase-uris
+   #:card-highres_image
+   #:card-illustration_id
+   #:card-image_uris
+   #:card-printed_name
+   #:card-printed_type_line
+   #:card-printed_text
+   #:card-purchase_uris
    #:card-rarity
-   #:card-related-uris
-   #:card-reprint nil
-   #:card-scryfall-set-uri
+   #:card-related_uris
+   #:card-reprint
+   #:card-scryfall_set_uri
    #:card-set
-   #:card-set-name
-   #:card-set-search-uri
-   #:card-set-uri
-   #:card-story-spotlight-number
-   #:card-story-spotlight-uri
+   #:card-set_name
+   #:card-set_search_uri
+   #:card-set_uri
+   #:card-story_spotlight_number
+   #:card-story_spotlight_uri
    #:card-timeshifted
    #:card-tix
    #:card-usd
    #:card-watermark
    #:cards-cards
    #:cards-search
-   #:cards-named-exact
-   #:cards-named-fuzzy
+   #:cards-named_exact
+   #:cards-named_fuzzy
    #:cards-autocomplete
    #:cards-random
    #:cards-multiverse
    #:cards-mtgo
    #:cards-arena
-   #:cards-code-number
+   #:cards-code_number
    #:cards-id
-   #:mtg-set-object
-   #:mtg-set-code
-   #:mtg-set-mtgo_code
-   #:mtg-set-name
-   #:mtg-set-set_type
-   #:mtg-set-released_at
-   #:mtg-set-block_code
-   #:mtg-set-block
-   #:mtg-set-parent_set_code
-   #:mtg-set-card_count
-   #:mtg-set-digital
-   #:mtg-set-foil-only
-   #:mtg-set-icon_svg_uri
-   #:mtg-set-scryfall_uri
-   #:mtg-set-search_uri
-   #:mtg-set-uri
+   #:mtg-set_object
+   #:mtg-set_code
+   #:mtg-set_mtgo_code
+   #:mtg-set_name
+   #:mtg-set_set_type
+   #:mtg-set_released_at
+   #:mtg-set_block_code
+   #:mtg-set_block
+   #:mtg-set_parent_set_code
+   #:mtg-set_card_count
+   #:mtg-set_digital
+   #:mtg-set_foil_only
+   #:mtg-set_icon_svg_uri
+   #:mtg-set_scryfall_uri
+   #:mtg-set_search_uri
+   #:mtg-set_uri
    #:sets-sets
    #:sets-set
    #:ruling-object
