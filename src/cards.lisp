@@ -8,7 +8,7 @@
 
 ;; API Calls
 (defun cards-cards (page)
-  "Returns a List object that contains all cards in Scryfall’s database."
+  "Returns a List object that contains all cards in Scryfall’s database. PAGE specifies the page of the request."
   (with-api-call "/cards"
     (epairlis '("page") (list page))
     (create-cards json)))

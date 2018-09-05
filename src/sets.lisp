@@ -1,6 +1,5 @@
 (in-package :cl-scryfall)
 
-
 (defstruct mtg-set
   (object "set" :type string)
   (code nil :type string)
@@ -29,4 +28,4 @@
 (defun sets-set (code)
   "Returns a set with the given set CODE. CODE can either be the code or the mtgo_code for the set"
   (with-api-call (format nil "/sets/~a" code) nil
-                 (apply #'make-set json)))
+                 (apply #'make-mtg-set json)))

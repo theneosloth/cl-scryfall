@@ -2,8 +2,6 @@
 
 (in-package #:cl-scryfall)
 
-;;; "cl-scryfall" goes here. Hacks and glory await!
-
 (define-condition scryfall-response-error (warning)
   ((response-status :initarg :status
                     :reader response-status
