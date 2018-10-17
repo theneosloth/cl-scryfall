@@ -12,8 +12,7 @@
                            (not (cdr x))
                            (string= (cdr x) "NIL")))
              (pairlis keys
-                      (mapcar #'(lambda(x) (format nil "~A" x))
-                              data))))
+                      (mapcar #'(lambda(x) (format nil "~A" x)) data))))
 
 (defun load-url-as-json (url &optional &key params type)
   "Load a given url into a plist"
