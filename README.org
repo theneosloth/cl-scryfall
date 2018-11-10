@@ -5,7 +5,7 @@ This is a work in progress api wrapper for scryfall.com. Every API method for ca
 ** Example
 #+BEGIN_SRC lisp
 (ql:quickload :cl-scryfall)
-(cl-scryfall:cards-random)
+(cl-scryfall.cards:cards-random)
 #+END_SRC
 
 #+BEGIN_SRC lisp
