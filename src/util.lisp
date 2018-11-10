@@ -1,6 +1,10 @@
-;;;; util.lisp
+(in-package :cl-user)
+(defpackage cl-scryfall.util
+  (:use :cl)
+  (:import-from :cl-scryfall.globals :+scryfall+ :+user-agent+)
+  (:export :json))
 
-(in-package #:cl-scryfall)
+(in-package :cl-scryfall.util)
 
 (defun build-url (path)
   "Adds path to the base url. TODO: Argument support"
@@ -25,9 +29,10 @@
   (if (and (getf list :has-more) continue)
       (append
        (mapcard func (load-url-as-json (getf list :next-page)))
-       (mapcar func (getf list :data)))
-      (mapcar func (getf list :data))))
+       (mapcar #'(lambda (l) (apply func l)) (getf list :data)))
+      (mapcar #'(lambda (l) (apply func l)) (getf list :data))))
 
 (defun make-objects (constructor)
+  "Returns a function that uses CONSTRUCTOR to create any number of objects from LIST"
   #'(lambda (list)
-      (mapcard (make-object #'constructor) list)))
+      (mapcard constructor list)))

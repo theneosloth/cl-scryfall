@@ -1,5 +1,8 @@
-;;;; globals.lisp
-(in-package :cl-scryfall)
+(in-package :cl-user)
+(defpackage cl-scryfall.globals
+  (:use :cl))
+
+(in-package :cl-scryfall.globals)
 
 ;;Globals
 (defvar +scryfall+ "https://api.scryfall.com")

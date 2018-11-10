@@ -1,6 +1,10 @@
 ;;;; cl-scryfall.lisp
+(in-package :cl-user)
+(defpackage cl-scryfall.scryfall
+  (:use :cl)
+  (:import-from :cl-scryfall.util :build-url :load-url-as-json))
 
-(in-package #:cl-scryfall)
+(in-package :cl-scryfall.scryfall)
 
 (define-condition scryfall-response-error (warning)
   ((response-status :initarg :status
@@ -31,16 +35,30 @@
   "Load a json from a url built by BUILD-PATH, then execute body with local variables for the URL and loaded JSON.
    Signals a warning if the call returns an error."
   (let ((tempparams (gensym))
-        (temppath (gensym)))
+        (temppath (gensym))
+        (url (intern (symbol-name 'url)))
+        (json (intern (symbol-name 'json))))
     `(let* ((,temppath ,path)
             (,tempparams ,params)
-            (url (build-url ,temppath))
-            (json (load-url-as-json url :params ,tempparams)))
+            (,url (build-url ,temppath))
+            (,json (load-url-as-json ,url :params ,tempparams)))
        (cond
-         ((equalp (getf json :object) "error") (warn 'scryfall-response-error
-                                                     :status (getf json :status)
-                                                     :code (getf json :code)
-                                                     :details (getf json :details)
-                                                     :type (getf json :type)
-                                                     :warnings (getf json :warnings)))
+         ((equalp (getf ,json :object) "error") (warn 'scryfall-response-error
+                                                      :status (getf ,json :status)
+                                                      :code (getf ,json :code)
+                                                      :details (getf ,json :details)
+                                                      :type (getf ,json :type)
+                                                      :warnings (getf ,json :warnings)))
          (,@body)))))
+
+(defun get-from-api (path &optional params)
+  "Load a json from a url built by BUILD-PATH. Signals a warning if the call returns an error."
+  (let* ((url (build-url path))
+         (json (load-url-as-json url :params params)))
+    (if (equalp (getf json :object) "error")
+        (warn 'scryfall-response-error
+              :status (getf json :status)
+              :code (getf json :code)
+              :type (getf json :type)
+              :warnings (getf json :warnings))
+        json)))

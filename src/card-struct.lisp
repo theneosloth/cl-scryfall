@@ -1,10 +1,79 @@
-;;;; card-struct.lisp
+(in-package :cl-user)
+(defpackage cl-scryfall.card-struct
+  (:use :cl)
+  (:export
+   #:card-arena_id
+   #:card-tcgplayer_id
+   #:card-id
+   #:card-lang
+   #:card-mtgo_id
+   #:card-mtgo_foil_id
+   #:card-multiverse_ids
+   #:card-object
+   #:card-oracle_id
+   #:card-prints_search_uri
+   #:card-rulings_uri
+   #:card-scryfall_uri
+   #:card-uri
+   #:card-all_parts
+   #:card-card_faces
+   #:card-cmc
+   #:card-colors
+   #:card-color_identity
+   #:card-edhrec_rank
+   #:card-foil
+   #:card-hand_modifier
+   #:card-layout
+   #:card-legalities
+   #:card-life_modifier
+   #:card-loyalty
+   #:card-mana_cost
+   #:card-name
+   #:card-nonfoil
+   #:card-oracle_text
+   #:card-oversized
+   #:card-power
+   #:card-reserved
+   #:card-toughness
+   #:card-type_line
+   #:card-artist
+   #:card-border_color
+   #:card-collector_number
+   #:card-colorshifted
+   #:card-digital
+   #:card-eur
+   #:card-flavor_text
+   #:card-frame
+   #:card-full_art
+   #:card-futureshifted
+   #:card-highres_image
+   #:card-illustration_id
+   #:card-image_uris
+   #:card-printed_name
+   #:card-printed_type_line
+   #:card-printed_text
+   #:card-purchase_uris
+   #:card-rarity
+   #:card-related_uris
+   #:card-reprint
+   #:card-scryfall_set_uri
+   #:card-set
+   #:card-set_name
+   #:card-set_search_uri
+   #:card-set_uri
+   #:card-story_spotlight_number
+   #:card-story_spotlight_uri
+   #:card-timeshifted
+   #:card-tix
+   #:card-usd
+   #:card-watermark))
 
-(in-package #:cl-scryfall)
+(in-package :cl-scryfall.card-struct)
 
 (defstruct card
   ;; Core Card Fields
   (arena_id nil :type (or integer null))
+  (tcgplayer_id nil :type (or integer null))
   (id nil :type string)
   (lang nil :type string)
   (mtgo_id nil :type (or integer null))
