@@ -1,20 +1,28 @@
 (in-package :cl-user)
 (defpackage cl-scryfall.util
   (:use :cl)
-  (:import-from :cl-scryfall.globals :+scryfall+ :+user-agent+)
-  (:export :json))
+  (:export
+   :build-url
+   :load-url-as-json
+   :mapcard
+   :make-objects))
 
 (in-package :cl-scryfall.util)
+
+;;Globals
+(defvar +scryfall+ "https://api.scryfall.com")
+
+(defvar +user-agent+ "cl-scryfall 0.1 (common lisp api wrapper)")
 
 (defun build-url (path)
   "Adds path to the base url. TODO: Argument support"
   (format nil "~a~a" +scryfall+ path))
 
 (defun epairlis (keys data)
-  "Returns a drakma compatible alist based on given keys and data"
-  (remove-if #'(lambda(x) (or
-                           (not (cdr x))
-                           (string= (cdr x) "NIL")))
+  "Returns a drakma compatible alist based on given keys and data."
+  (remove-if #'(lambda (x) (or
+                            (not (cdr x))
+                            (string= (cdr x) "NIL")))
              (pairlis keys
                       (mapcar #'(lambda(x) (format nil "~A" x)) data))))
 

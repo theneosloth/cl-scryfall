@@ -92,7 +92,6 @@
   (let ((data (get-from-api (format nil "/cards/~a" id) nil)))
     (apply #'make-card data)))
 
-
 (defun cards-tcgplayer (id)
   "Returns a single card with the given TCGPlayer ID."
   (let ((data (get-from-api (format nil "/cards/tcgplayer/~a" id) nil)))
