@@ -22,6 +22,7 @@
    #:card-color_identity
    #:card-edhrec_rank
    #:card-foil
+   #:card-list
    #:card-hand_modifier
    #:card-layout
    #:card-legalities
@@ -44,6 +45,7 @@
    #:card-eur
    #:card-flavor_text
    #:card-frame
+   #:card-frame_effect
    #:card-full_art
    #:card-futureshifted
    #:card-highres_image
@@ -52,9 +54,11 @@
    #:card-printed_name
    #:card-printed_type_line
    #:card-printed_text
+   #:card-promo
    #:card-purchase_uris
    #:card-rarity
    #:card-related_uris
+   #:card-released_at
    #:card-reprint
    #:card-scryfall_set_uri
    #:card-set
@@ -93,6 +97,7 @@
   (color_identity nil :type list)
   (edhrec_rank nil :type (or integer null))
   (foil nil :type boolean)
+  (games nil :type list)
   (hand_modifier nil :type (or string null))
   (layout nil :type string)
   (legalities nil :type list)
@@ -116,6 +121,7 @@
   (eur nil :type (or string null))
   (flavor_text nil :type (or string null))
   (frame nil :type string)
+  (frame_effect nil :type string)
   (full_art nil :type boolean)
   (futureshifted nil :type boolean)
   (highres_image nil :type boolean)
@@ -124,9 +130,11 @@
   (printed_name nil :type (or string null))
   (printed_type_line nil :type (or string null))
   (printed_text nil :type (or string null))
+  (promo nil :type boolean)
   (purchase_uris nil :type list)
   (rarity nil :type string)
   (related_uris nil :type list)
+  (released_at nil :type string)
   (reprint nil :type boolean)
   (scryfall_set_uri nil :type string)
   (set nil :type string)
