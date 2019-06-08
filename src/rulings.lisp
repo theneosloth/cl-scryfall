@@ -8,6 +8,7 @@
            #:ruling-published_at
            #:ruling-comment
            #:rulings-multiverse
+           #:rulings-arena
            #:rulings-mtgo
            #:rulings-number
            #:rulings-id))
@@ -22,6 +23,11 @@
   (comment nil :type string))
 
 (defvar create-rulings (make-objects #'make-ruling))
+
+(defun rulings-arena (arenaid)
+  "Returns a List of rulings for a card with the given  Magic: The Gathering Arena ID."
+  (let ((data (get-from-api (format nil "/cards/arena/~a/rulings" arenaid) nil)))
+    (funcall create-rulings data)))
 
 (defun rulings-multiverse (multiverseid)
   "Returns a List of rulings for a card with the given Multiverse ID. If the card has multiple multiverse IDs, this method can find either of them."

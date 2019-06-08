@@ -51,6 +51,7 @@
    #:card-highres_image
    #:card-illustration_id
    #:card-image_uris
+   #:card-prices
    #:card-printed_name
    #:card-printed_type_line
    #:card-printed_text
@@ -121,12 +122,13 @@
   (eur nil :type (or string null))
   (flavor_text nil :type (or string null))
   (frame nil :type string)
-  (frame_effect nil :type string)
+  (frame_effect nil :type (or string null))
   (full_art nil :type boolean)
   (futureshifted nil :type boolean)
   (highres_image nil :type boolean)
   (illustration_id nil :type (or string null))
   (image_uris nil :type (or list null))
+  (prices nil :type list)
   (printed_name nil :type (or string null))
   (printed_type_line nil :type (or string null))
   (printed_text nil :type (or string null))
