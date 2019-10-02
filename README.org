@@ -1,4 +1,5 @@
-[[https://travis-ci.org/theneosloth/cl-scryfall[https://travis-ci.org/theneosloth/cl-scryfall.svg?branch=master]]
+[[https://travis-ci.org/theneosloth/cl-scryfall][https://travis-ci.org/theneosloth/cl-scryfall.svg?branch=master]]
+
 * cl-scryfall
 
 This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented.
