@@ -2,4 +2,4 @@
   (:use #:cl #:fiveam)
   (:export #:run!
            #:all-tests
-           #:test-scryfall))
+           #:do-tests))

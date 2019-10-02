@@ -6,7 +6,7 @@
 (in-suite all-tests)
 
 
-(defun test-scryfall ()
+(defun do-tests ()
   (run! 'all-tests))
 
 (test transform-test

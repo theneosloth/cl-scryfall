@@ -18,10 +18,10 @@
                                      (:file "rulings")))))
 
 (asdf:defsystem #:cl-scryfall/tests
-    :depends-on (:cl-scryfall :fiveam)
-    :perform (test-op (o s)
-                      (uiop:symbol-call :cl-scryfall-tests :test-scryfall))
-    :components ((:module "t"
-                          :serial t
-                          :components ((:file "package")
-                                       (:file "main")))))
+  :depends-on (:cl-scryfall :fiveam)
+  :perform (test-op (o s)
+                    (uiop:symbol-call :cl-scryfall-tests :do-tests))
+  :components ((:module "t"
+                        :serial t
+                        :components ((:file "package")
+                                     (:file "main")))))
