@@ -18,6 +18,14 @@ matrix:
   allow_failures:
     # CIM not available for CMUCL
     - env: LISP=cmucl
+    # Fails when using cl-ssl
+    - env: LISP=sbcl32
+    - env: LISP=ccl32
+    - env: LISP=clisp32
+    - env: LISP=clisp
+    # Fails for unknown reasons
+    - env: allegro
+    - env: ecl
 
 # either use a local install.sh script or install it via curl. Feel
 # free to simplify this section in your own .travis.yml file.

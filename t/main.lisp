@@ -14,6 +14,10 @@
     (is (string= (cl-scryfall.card-struct:card-name transform-card) "Delver of Secrets // Insectile Aberration"))))
 
 (test autocomplete-test
-  (let ((autocomplete-card (cl-scryfall.cards:cards-autocomplete "Lightning B"))
-        (results (list "Lightning Blow" "Lightning Bolt" "Lightning Blast" "Lightning Berserker")))
-    (is-true (every #'string= autocomplete-card results))))
+      (let ((autocomplete-card (cl-scryfall.cards:cards-autocomplete "Lightning B"))
+            (results (list "Lightning Blow" "Lightning Bolt" "Lightning Blast" "Lightning Berserker")))
+        (is-true (every #'string= autocomplete-card results))))
+
+(test random-test
+      (let ((random-card (cl-scryfall.cards:cards-random)))
+        (is (string= (cl-scryfall.card-struct:card-object random-card) "card"))))
