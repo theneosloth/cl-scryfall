@@ -1,6 +1,9 @@
+[[https://travis-ci.org/theneosloth/cl-scryfall[https://travis-ci.org/theneosloth/cl-scryfall.svg?branch=master]]
 * cl-scryfall
 
-This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented
+This is a work in progress api wrapper for scryfall.com. Every API method for cards, rulings and sets is currently implemented.
+
+Tested only on SBCL
 
 ** Example
 #+BEGIN_SRC lisp
