@@ -24,8 +24,8 @@ matrix:
     - env: LISP=clisp32
     - env: LISP=clisp
     # Fails for unknown reasons
-    - env: allegro
-    - env: ecl
+    - env: LISP=allegro
+    - env: LISP=ecl
 
 # either use a local install.sh script or install it via curl. Feel
 # free to simplify this section in your own .travis.yml file.
