@@ -57,7 +57,6 @@
    #:card-highres_image
    #:card-illustration_id
    #:card-image_uris
-   #:card-prices
    #:card-printed_name
    #:card-printed_type_line
    #:card-printed_text
@@ -143,7 +142,6 @@
   (illustration_id nil :type (or string null))
   (prices nil :type list)
   (image_uris nil :type (or list null))
-  (prices nil :type list)
   (printed_name nil :type (or string null))
   (printed_type_line nil :type (or string null))
   (printed_text nil :type (or string null))
