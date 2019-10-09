@@ -4,13 +4,13 @@ sudo: required
 env:
   matrix:
     - LISP=abcl
-    - LISP=allegro
+    - LISP=allegro BITS=32
     - LISP=sbcl
-    - LISP=sbcl32
+    - LISP=sbcl32 BITS=32
     - LISP=ccl
-    - LISP=ccl32
+    - LISP=ccl32 BITS=32
     - LISP=clisp
-    - LISP=clisp32
+    - LISP=clisp32 BITS=32
     - LISP=cmucl
     - LISP=ecl
 
@@ -27,26 +27,16 @@ matrix:
     - env: LISP=allegro
     - env: LISP=ecl
 
-# either use a local install.sh script or install it via curl. Feel
-# free to simplify this section in your own .travis.yml file.
+# Install cl-travis
 install:
   - if [ -x ./install.sh ] && head -2 ./install.sh | grep '^# cl-travis' > /dev/null;
     then
       ./install.sh;
     else
       curl https://raw.githubusercontent.com/luismbo/cl-travis/master/install.sh | sh;
-    fi     
+    fi
+  - if [ $BITS = 32 ]; then sudo apt-get install libc6-dev-i386; fi
 
-# this bit is just testing that travis correctly sets up ASDF to find
-# systems placed somewhere within ~/lisp. You can remove this section
-# in your own .travis.yml file.
-before_script:
-  - echo "(defsystem :dummy-cl-travis-system)" > ~/lisp/dummy-cl-travis-system.asd
-
-# this serves as an example of how to use the 'cl' script (provided by
-# CIM) to test your Lisp project. Here, we're using the RT framework
-# to do unit testing; other frameworks will have different ways of
-# determining whether a test suite fails or succeeds.
 script:
   - cl -e '(ql:quickload :cl-scryfall/tests)
            (unless (cl-scryfall-tests:do-tests)
