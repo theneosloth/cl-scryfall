@@ -22,6 +22,7 @@
    #:card-cmc
    #:card-colors
    #:card-color_identity
+   #:card-color_indicator
    #:card-edhrec_rank
    #:card-foil
    #:card-list
@@ -80,7 +81,8 @@
    #:card-usd
    #:card-variation
    #:card-variation_of
-   #:card-watermark))
+   #:card-watermark
+   #:card-preview))
 
 (in-package :cl-scryfall.card-struct)
 
@@ -106,6 +108,7 @@
   (cmc nil :type float)
   (colors nil :type (or list null))
   (color_identity nil :type list)
+  (color_indicator nil :type (or list null))
   (edhrec_rank nil :type (or integer null))
   (foil nil :type boolean)
   (games nil :type list)
@@ -165,4 +168,5 @@
   (variation_of nil :type (or string null))
   (tix nil :type (or string null))
   (usd nil :type (or string null))
-  (watermark nil :type (or string null)))
+  (watermark nil :type (or string null))
+  (preview nil :type (or list null)))

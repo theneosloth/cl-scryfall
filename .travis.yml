@@ -7,15 +7,18 @@ env:
     - LISP=allegro
     - LISP=sbcl
     - LISP=ccl
+    - LISP=clisp
 
 
 matrix:
   allow_failures:
     - env: LISP=allegro
+    - env: LISP=clisp
 
 
 before_install:
-    # Allegro needs the 32 bit libraries to compile
+    # TODO: allegro and clisp are missing the proper openssl libraries
+    # The ubuntu repo does not have the versions needed by cl-ssl
   - if [ $LISP = allegro ]; then sudo apt-get install libc6-dev-i386 && sudo apt-get install libssl-dev; fi
 
 # Install cl-travis
