@@ -19,11 +19,10 @@
                      :reader response-details
                      :type string
                      :documentation "A human-readable string explaining the error.")
-   ;; Can be null
+   ;; Can be either a string or a null
    (response-type :initarg :type
                   :initform nil
                   :reader response-type
-                  :type string
                   :documentation "A computer-friendly string that provides additional context for the main error. For example, an endpoint many generate HTTP 404 errors for different kinds of input. This field will provide a label for the specific kind of 404 failure, such as ambiguous.")
 
    (response-warnings :initarg :warnings
